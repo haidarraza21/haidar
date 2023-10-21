@@ -38,10 +38,10 @@ $(document).ready(function () {
     });
 
     // <!-- emailjs to mail contact form data -->
-    $("#contact-form").submit(function (event) {
+    $("contact-form").submit(function (event) {
         emailjs.init("user_TTDmetQLYgWCLzHTDgqxm");
 
-        emailjs.sendForm('contact_service', 'template_contact', '#contact-form')
+        emailjs.sendForm('contact_service', 'template_contact', 'contact-form')
             .then(function (response) {
                 console.log('SUCCESS!', response.status, response.text);
                 document.getElementById("contact-form").reset();
@@ -55,6 +55,38 @@ $(document).ready(function () {
     // <!-- emailjs to mail contact form data -->
 
 });
+  const mysql = require('mysql2');
+    const connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: 'haidar@123',
+        database: 'm'
+    });
+    
+    // Your form submission handling code
+    $("contact-form").submit(function (event) {
+        event.preventDefault();
+    
+        const formData = {
+            name: $("name").val(),
+            email: $("email").val(),
+            message: $("message").val()
+        };
+    
+        const sql = "INSERT INTO contact_data (name, email, message) VALUES (?, ?, ?)";
+        const values = [formData.name, formData.email, formData.message];
+    
+        connection.query(sql, values, (error, results) => {
+            if (error) {
+                console.error('Database error:', error);
+                alert('Form Submission Failed! Try Again');
+            } else {
+                console.log('Form data inserted into the database.');
+                document.getElementById("contact-form").reset();
+                alert('Form Submitted Successfully');
+            }
+        });
+    });
 
 document.addEventListener('visibilitychange',
     function () {
