@@ -52,10 +52,8 @@ $(document).ready(function () {
             });
         event.preventDefault();
     });
-    // <!-- emailjs to mail contact form data -->
 
-});
-  const mysql = require('mysql2');
+    const mysql = require('mysql2');
     const connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
@@ -87,16 +85,20 @@ $(document).ready(function () {
             }
         });
     });
+    
+    // <!-- emailjs to mail contact form data -->
+
+});
 
 document.addEventListener('visibilitychange',
     function () {
         if (document.visibilityState === "visible") {
             document.title = "Portfolio | Haidar Raza";
-            $("#favicon").attr("href", "favicon.png");
+            $("#favicon").attr("href", "assets/images/favicon.png");
         }
         else {
             document.title = "Come Back To Portfolio";
-            $("#favicon").attr("href", "favhand.png");
+            $("#favicon").attr("href", "assets/images/favhand.png");
         }
     });
 
