@@ -52,7 +52,6 @@ $(document).ready(function () {
             });
         event.preventDefault();
     });
-    
     // <!-- emailjs to mail contact form data -->
 
 });
