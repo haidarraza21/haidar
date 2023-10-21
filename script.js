@@ -53,6 +53,38 @@ $(document).ready(function () {
         event.preventDefault();
     });
 
+    const mysql = require('mysql2');
+    const connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: 'haidar@123',
+        database: 'm'
+    });
+    
+    // Your form submission handling code
+    $("contact-form").submit(function (event) {
+        event.preventDefault();
+    
+        const formData = {
+            name: $("name").val(),
+            email: $("email").val(),
+            message: $("message").val()
+        };
+    
+        const sql = "INSERT INTO contact_data (name, email, message) VALUES (?, ?, ?)";
+        const values = [formData.name, formData.email, formData.message];
+    
+        connection.query(sql, values, (error, results) => {
+            if (error) {
+                console.error('Database error:', error);
+                alert('Form Submission Failed! Try Again');
+            } else {
+                console.log('Form data inserted into the database.');
+                document.getElementById("contact-form").reset();
+                alert('Form Submitted Successfully');
+            }
+        });
+    });
     
     // <!-- emailjs to mail contact form data -->
 
