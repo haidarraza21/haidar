@@ -44,8 +44,8 @@ This portfolio contains the following sections:
 
 You can connect with me through the following channels:
 
-- **LinkedIn:** [linkedin.com/in/haidar-raza](https://linkedin.com/in/haidar-raza)
-- **GitHub:** [github.com/haidar2111](https://github.com/haidar2111)
+- **LinkedIn:** [linkedin.com/in/haidar-raza](https://www.linkedin.com/in/haidar-raza-/)
+- **GitHub:** [github.com/haidar21]https://github.com/haidarraza21)
 - **Email:** [haidarraza843426@gmail.com](mailto:haidarraza843426@gmail.com)
 
 Thank you for visiting my portfolio! Keep rising 🚀.
