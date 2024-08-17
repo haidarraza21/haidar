@@ -2,6 +2,11 @@
 
 Welcome to my personal portfolio website. This site showcases my journey as a full-stack web developer, highlighting my skills, experiences, and projects.
 
+## Demo
+
+You can view a live demo of my portfolio at [https://haidarraza21.github.io/haidar/](https://haidarraza21.github.io/haidar/).
+
+
 ## Website Overview
 
 This portfolio contains the following sections:
